@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="estilos/estilos.css" type="text/css" />
+    <link rel="stylesheet" href="estilos.css" type="text/css" />
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
@@ -17,7 +17,7 @@
   </head>
 <body>
     <div class="columns">
-        <div class="column uno">
+        <div class="column_uno">
             <div>
                 <p> Nombre: </p>
                 <input id = "nombre" type="text" name="" placeholder="nombre">
@@ -28,7 +28,7 @@
                 <p><button type="submit">Generar Mensaje</button></p>
             </div>
         </div>
-        <div class="column dos">
+        <div class="column_dos">
             <p id="mensajeFinal"></p>
         </div>
     </div>
@@ -39,7 +39,7 @@
         var texto1 = $('#nombre').val();
         var texto2 = $('#apellido').val();
         var texto3 = $('#datepicker').val();
-        $('#mensajeFinal').append("Datos Ingresados: "+ texto1+"<br>"+ texto2+"<br>"+texto3);
+        $('#mensajeFinal').append("Datos Ingresados: <br>"+ texto1+"<br>"+ texto2+"<br>"+texto3);
         console.log(texto1);
         console.log(texto2);
         console.log(texto3);

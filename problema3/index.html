@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>PROBLEMA 3</title>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  </head>
+  <body>
+      <h1>PROBLEMA 3</h1>
+      <p id="mensajeFinal">
+      </p>
+      <button type="submit" id="obtenerInformacion">Obtener información</button>
+      
+  </body>
+  <script>
+    $(document).ready(function() {
+      var url = "https://pkgstore.datahub.io/core/country-codes/country-codes_json/data/616b1fb83cbfd4eb6d9e7d52924bb00a/country-codes_json.json";
+      $( "#obtenerInformacion" ).click(function() {
+            $.ajax({
+              dataType: 'json',
+              url: url 
+            }).then(function(data) {
+              for(var i=0; i<data.length; i++){
+                console.log(data[i]);
+                console.log(data[i]["CLDR display name"]);
+                console.log(data[i].Capital);
+                console.log(data[i].FIPS);
+                console.log(data[i].FIFA);
+                console.log(data[i].Continent);
+                console.log(data[i].Languajes);
+                console.log(data[i]["Geoname ID"]);
+                console.log(data[i].DS);
+                $('#mensajeFinal').append("<p> <b>CLDR display name:</b> "+ data[i]["CLDR display name"] + " <b>Capital:</b> " + data[i].Capital + " <b>FIPS:</b> " + data[i].FIPS + " <b>FIFA:</b> " + data[i].FIFA + " <b>Continent:</b> " + data[i].Continent + 
+                    " <b>Languages:</b> " + data[i].Languages + " <b>Geoname:</b> " + data[i]["Geoname ID"] + " <b>DS:</b> " + data[i].DS +"</p>");
+              }
+            });      
+      });
+      
+      $( "#limpiarInformacion" ).click(function() {
+          $('#mensajeFinal').empty();
+      });
+    });
+  </script>
+</html>
